@@ -240,20 +240,46 @@ class Queue {
   }
 }
 
+function maxProfit(array){
+    // iterate through the array
+    // check the difference of i and i + 1 at each iteration
+    // store difference
+    // change if difference at iteration is greater than before
+    // return difference
+    let maxDifference = 0;
+    for(let i = 0; i < array.length; i++){
+        if(array[i + 1] - array[i] > maxDifference){
+            maxDifference = array[i + 1] - array[i]
+        }
+    }
+    return maxDifference;
+}
+
+function eggDrop(){
+    // input: 1 - 100, 2 eggs
+    // take 1 egg and drop it from floor 1
+    // if it doesn't break, then move on to floor 2
+    // and so on until the egg breaks
+    // repeat for egg 2 and take the highest floor from the two results
+}
+
 function main() {
-  console.log(sortedBST.dfsInOrder());
-  console.log(sortedBST.dfsPreOrder());
-  console.log(sortedBST.dfsPostOrder());
-  const BST = new BinarySearchTree();
-  BST.insert(5, 'Captain Picard');
-  BST.insert(3, 'Commander Riker');
-  BST.insert(2, 'Lt. Cmdr. Worf');
-  BST.insert(4, 'Lt. Cmdr. LaForge');
-  BST.insert(1, 'Lieutenant security-officer');
-  BST.insert(6, 'Commander Data');
-  BST.insert(8, 'Lt. Cmdr. Crusher');
-  BST.insert(7, 'Lieutenant Selar');
-  console.log(BST.bfs());
+//   console.log(sortedBST.dfsInOrder());
+//   console.log(sortedBST.dfsPreOrder());
+//   console.log(sortedBST.dfsPostOrder());
+//   const BST = new BinarySearchTree();
+//   BST.insert(5, 'Captain Picard');
+//   BST.insert(3, 'Commander Riker');
+//   BST.insert(2, 'Lt. Cmdr. Worf');
+//   BST.insert(4, 'Lt. Cmdr. LaForge');
+//   BST.insert(1, 'Lieutenant security-officer');
+//   BST.insert(6, 'Commander Data');
+//   BST.insert(8, 'Lt. Cmdr. Crusher');
+//   BST.insert(7, 'Lieutenant Selar');
+//   console.log(BST.bfs());
+let array = [128, 97, 121, 123, 98, 97, 105];
+console.log(maxProfit(array));
 }
 
 main();
+
